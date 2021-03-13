@@ -1,0 +1,29 @@
+{
+  "name": "desafio-pebmed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nataliamelgaco/desafio-pebmed.git"
+  },
+  "author": "Natália Melgaço",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nataliamelgaco/desafio-pebmed/issues"
+  },
+  "homepage": "https://github.com/nataliamelgaco/desafio-pebmed#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
