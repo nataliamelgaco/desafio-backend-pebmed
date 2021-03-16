@@ -1,67 +1,67 @@
 const conexao = require('../infraestrutura/conexao')
 class Cadastro {
-    salvar(paciente, res) {
-        const sql = 'INSERT INTO Paciente SET ?'
+  salvar (paciente, res) {
+    const sql = 'INSERT INTO Paciente SET ?'
 
-        conexao.query(sql, paciente, (erro, resultados) => {
-            if (erro) {
-                res.status(400).json(erro)
-            } else {
-                res.status(201).json(paciente)
-            }
-        })
-    }
+    conexao.query(sql, paciente, (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro)
+      } else {
+        res.status(201).json(paciente)
+      }
+    })
+  }
 
-    listar(res) {
-        const sql = 'SELECT * FROM Paciente'
+  listar (res) {
+    console.log('AQUI NAAAAAAO')
+    const sql = 'SELECT * FROM Paciente'
 
-        conexao.query(sql, (erro, resultados) => {
-            if (erro) {
-                res.status(400).json(erro)
-            } else {
-                res.status(200).json(resultados)
-            }
-        })
+    conexao.query(sql, (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro)
+      } else {
+        res.status(200).json(resultados)
+      }
+    })
+  }
 
-    }
+  buscarPorId (id, res) {
+    const sql = `SELECT * FROM Paciente WHERE id=${id}`
 
-    buscarPorId(id, res) {
-        const sql = `SELECT * FROM Paciente WHERE id=${id}`
+    conexao.query(sql, (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro)
+      } else {
+        const paciente = resultados[0]
 
-        conexao.query(sql, (erro, resultados) => {
-            if (erro) {
-                res.status(400).json(erro)
-            } else {
-                const paciente = resultados[0]
+        res.status(200).json(paciente)
+      }
+    })
+  }
 
-                res.status(200).json(paciente)
-            }
-        })
-    }
+  editar (id, valores, res) {
+    const sql = 'UPDATE Paciente SET ? WHERE id=?'
 
-    editar(id, valores, res) {
-        const sql = 'UPDATE Paciente SET ? WHERE id=?'
+    conexao.query(sql, [valores, id], (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro)
+      } else {
+        res.status(200).json({ ...valores, id })
+      }
+    })
+  }
 
-        conexao.query(sql, [valores, id], (erro, resultados) => {
-            if (erro) {
-                res.status(400).json(erro)
-            } else {
-                res.status(200).json({...valores,id})
-            }
-        })
-    }
+  deletar (id, res) {
+    const sql = 'DELETE FROM Paciente WHERE id=?'
 
-    deletar(id, res) {
-        const sql = 'DELETE FROM Paciente WHERE id=?'
-
-        conexao.query(sql, id, (erro, resultados) => {
-            if(erro) {
-                res.status(400).json(erro)
-            } else {
-                res.status(200).json({id})
-            }
-        })
-    }
+    conexao.query(sql, id, (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro)
+      } else {
+        res.status(200).json({ id })
+      }
+    })
+  }
 }
 
-module.exports = new Cadastro
+module.exports = new Cadastro()
