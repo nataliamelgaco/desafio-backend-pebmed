@@ -1,0 +1,10 @@
+{
+    "mysql": {
+        "usuario": "DESAFIO_PEBMED_MYSQL_USUARIO",
+        "senha": "DESAFIO_PEBMED_MYSQL_SENHA",
+        "host": "DESAFIO_PEBMED_MYSQL_HOST"
+    },
+    "api": {
+        "porta": "DESAFIO_PEBMED_API_PORTA"
+    }
+}
