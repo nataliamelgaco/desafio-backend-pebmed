@@ -1,5 +1,5 @@
 const conexao = require('../infraestrutura/conexao')
-class Cadastro {
+class Paciente {
   salvar (paciente, res) {
     const sql = 'INSERT INTO Paciente SET ?'
 
@@ -13,7 +13,6 @@ class Cadastro {
   }
 
   listar (res) {
-    console.log('AQUI NAAAAAAO')
     const sql = 'SELECT * FROM Paciente'
 
     conexao.query(sql, (erro, resultados) => {
@@ -64,4 +63,4 @@ class Cadastro {
   }
 }
 
-module.exports = new Cadastro()
+module.exports = new Paciente()

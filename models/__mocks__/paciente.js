@@ -1,4 +1,4 @@
-class Cadastro {
+class Paciente {
   async salvar (paciente, res) {
     res.status(201).json(paciente)
   }
@@ -24,4 +24,4 @@ class Cadastro {
   }
 }
 
-module.exports = new Cadastro()
+module.exports = new Paciente()
