@@ -1,0 +1,1003 @@
+{
+	"info": {
+		"_postman_id": "06bbd10c-d3b9-4e2a-8b43-d90e41193ba8",
+		"name": "desafio-pebmed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/paciente",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"paciente"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de listar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/paciente",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paciente"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"98-PYE0pcx/elOYcnP5i/4o3DJZ1bk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:37:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Natália Melgaço\",\n        \"telefone\": \"21979527715\",\n        \"email\": null,\n        \"sexo\": \"F\",\n        \"data_nascimento\": \"1992-08-15T03:00:00.000Z\",\n        \"altura\": 2,\n        \"peso\": 74\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "buscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/paciente/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de buscarPorId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/paciente/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paciente",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-LxincjlaCXY09M/b+J6ItA0s6QQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Mar 2021 12:56:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"nome\": \"Natália Melgaço Pereira Torres\",\n    \"telefone\": \"21979527715\",\n    \"sexo\": \"M\",\n    \"data_nascimento\": \"0000-00-00 00:00:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"nome\": \"Natália Melgaço\",\r\n    \"telefone\": \"21979527715\",\r\n    \"email\": null,\r\n    \"sexo\": \"F\",\r\n    \"data_nascimento\": \"1992-08-15\",\r\n    \"altura\": 1.70,\r\n    \"peso\": 74.0\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/paciente",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"paciente"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de cadastrar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"nome\": \"Natália Melgaço\",\r\n    \"telefone\": \"21979527715\",\r\n    \"email\": null,\r\n    \"sexo\": \"F\",\r\n    \"data_nascimento\": \"1992-08-15\",\r\n    \"altura\": 1.70,\r\n    \"peso\": 74.0\r\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/paciente",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paciente"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"83-GRv2Zi1yS2EHmQvFoRDIRNLzkTE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:29:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nome\": \"Natália Melgaço\",\n    \"telefone\": \"21979527715\",\n    \"email\": null,\n    \"sexo\": \"F\",\n    \"data_nascimento\": \"1992-08-15\",\n    \"altura\": 1.7,\n    \"peso\": 74\n}"
+						}
+					]
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"peso\" : 1.70\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/paciente/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de editar",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"peso\" : 1.70\r\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/paciente/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paciente",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "19"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13-jiibvAATKc7kEczABq+0lIBZMSM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:37:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"peso\": 1.7,\n    \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/paciente/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de deletar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/paciente/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paciente",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8-h5EdGu1QmHe4OkjsU292jNzSLfE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:39:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Agendamentos de Consultas",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/agendamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"agendamento"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de listar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/agendamento",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agendamento"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-c2nnrzwmU/5v+QuOsGZSQm8Qx/A\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:43:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"paciente_id\": 1,\n        \"data_consulta\": \"2021-03-21T03:00:00.000Z\",\n        \"observacao\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "buscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/agendamento/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"agendamento",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de buscarPorId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/agendamento/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agendamento",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7a-X938pwuRlW0vj46AR00MrBiFPQs\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:44:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"paciente_id\": 1,\n    \"data_consulta\": \"2021-03-21T03:00:00.000Z\",\n    \"observacao\": \"Paciente teve reação ao remédio XPTO\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"paciente_id\": 1,\r\n    \"data_consulta\": \"2021-03-21\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/agendamento",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"agendamento"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de cadastrar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"paciente_id\": 1,\r\n    \"data_consulta\": \"2021-03-21\"\r\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/agendamento",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agendamento"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-UEXfmwgAIXAYcph8clroToJx1no\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:42:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paciente_id\": 1,\n    \"data_consulta\": \"2021-03-21\"\n}"
+						}
+					]
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente_id\": 1,\r\n    \"data_consulta\": \"2021-03-22\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/agendamento/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"agendamento",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de editar",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paciente_id\": 1,\r\n    \"data_consulta\": \"2021-03-22\"\r\n}"
+								},
+								"url": {
+									"raw": "localhost:3000/agendamento/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agendamento",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-y0qVhn8RgKwirueXsvUt9YxjoTI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:45:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paciente_id\": 1,\n    \"data_consulta\": \"2021-03-22\",\n    \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/agendamento/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"agendamento",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de deletar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/agendamento/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agendamento",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8-h5EdGu1QmHe4OkjsU292jNzSLfE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:46:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "salvarObservacao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"observacao\": \"Paciente teve reação ao remédio XPTO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/salvarObservacao/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"salvarObservacao",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de salvarObservacao",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"observacao\": \"Paciente teve reação ao remédio XPTO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/salvarObservacao/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"salvarObservacao",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-P0bzNtTAqLC3FHuFNbpmX/3a09o\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:44:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "\"Paciente teve reação ao remédio XPTO\""
+						}
+					]
+				},
+				{
+					"name": "listarObservacoesPorPacienteOuIdAgendamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/listarObservacoes?idPaciente=1&idAgendamento=2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"listarObservacoes"
+							],
+							"query": [
+								{
+									"key": "idPaciente",
+									"value": "1"
+								},
+								{
+									"key": "idAgendamento",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resultado de listarObservacoesPorPacienteOuIdAgendamento",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/listarObservacoes?idPaciente=1&idAgendamento=2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"listarObservacoes"
+									],
+									"query": [
+										{
+											"key": "idPaciente",
+											"value": "1"
+										},
+										{
+											"key": "idAgendamento",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-b633kiRuHMbWeNWbI2/sLfb8Zvc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Mar 2021 17:48:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"paciente_id\": 1,\n        \"data_consulta\": \"2021-03-22T03:00:00.000Z\",\n        \"observacao\": null\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,3 @@
+Link público compartilhável da coleção para acessar pelo postman
+
+https://www.getpostman.com/collections/c7a7b84938ae0f21b263

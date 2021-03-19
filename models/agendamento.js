@@ -73,6 +73,26 @@ class Agendamento {
       }
     })
   }
+
+  listarObservacoesPorPacienteOuIdAgendamento (idPaciente, id, res) {
+    let sql = ''
+
+    if (idPaciente && !id) {
+      sql = `SELECT * FROM Agendamento WHERE paciente_id=${idPaciente}`
+    } else if (!idPaciente && id) {
+      sql = `SELECT * FROM Agendamento WHERE id=${id}`
+    } else {
+      sql = `SELECT * FROM Agendamento WHERE id=${id} AND paciente_id=${idPaciente}`
+    }
+
+    conexao.query(sql, (erro, resultados) => {
+      if (erro) {
+        res.status(400).json(erro)
+      } else {
+        res.status(200).json(resultados)
+      }
+    })
+  }
 }
 
 module.exports = new Agendamento()

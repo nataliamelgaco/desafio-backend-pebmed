@@ -17,7 +17,7 @@ module.exports = app => {
     Agendamento.salvar(agendamento, res)
   })
 
-  app.put('/agendamento/:id', (req, res) => {
+  app.patch('/agendamento/:id', (req, res) => {
     const id = parseInt(req.params.id)
     const valores = req.body
 
@@ -30,10 +30,24 @@ module.exports = app => {
     Agendamento.deletar(id, res)
   })
 
-  app.post('/agendamento/observacao/:id', (req, res) => {
+  app.post('/salvarObservacao/:id', (req, res) => {
     const id = parseInt(req.params.id)
     const observacao = req.body.observacao
 
     Agendamento.salvarObservacao(observacao, id, res)
+  })
+
+  app.get('/listarObservacoes', (req, res) => {
+    let idPaciente = null
+    let idAgendamento = null
+
+    if (req.query.idPaciente) {
+      idPaciente = parseInt(req.query.idPaciente)
+    }
+    if (req.query.idAgendamento) {
+      idAgendamento = req.query.idAgendamento
+    }
+
+    Agendamento.listarObservacoesPorPacienteOuIdAgendamento(idPaciente, idAgendamento, res)
   })
 }
