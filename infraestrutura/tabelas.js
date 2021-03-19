@@ -6,7 +6,7 @@ class Tabelas {
   }
 
   criarTabelaPaciente () {
-    const sql = 'CREATE TABLE IF NOT EXISTS Paciente(id int NOT NULL AUTO_INCREMENT, nome varchar(50) NOT NULL, telefone varchar(15), email varchar(50), sexo varchar(1), data_nascimento datetime , altura numeric, peso numeric, PRIMARY KEY(id))'
+    const sql = 'CREATE TABLE IF NOT EXISTS Paciente(id int NOT NULL AUTO_INCREMENT, nome varchar(50) NOT NULL, telefone varchar(15), email varchar(50), sexo varchar(1), data_nascimento datetime , altura decimal(10,2), peso decimal(10,2), PRIMARY KEY(id))'
 
     this.conexao.query(sql, erro => {
       if (erro) {

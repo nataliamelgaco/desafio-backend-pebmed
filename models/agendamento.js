@@ -93,6 +93,12 @@ class Agendamento {
       }
     })
   }
+
+  deletarPorIdPaciente (idPaciente) {
+    const sql = 'DELETE FROM Agendamento WHERE paciente_id=?'
+
+    conexao.query(sql, idPaciente)
+  }
 }
 
 module.exports = new Agendamento()

@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nataliamelgaco/desafio-pebmed.git"
+    "url": "git+https://github.com/nataliamelgaco/desafio-backend-pebmed.git"
   },
   "author": "Natália Melgaço",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nataliamelgaco/desafio-pebmed/issues"
+    "url": "https://github.com/nataliamelgaco/desafio-backend-pebmed/issues"
   },
-  "homepage": "https://github.com/nataliamelgaco/desafio-pebmed#readme",
+  "homepage": "https://github.com/nataliamelgaco/desafio-backend-pebmed#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "consign": "^0.1.6",

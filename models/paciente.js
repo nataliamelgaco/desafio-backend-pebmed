@@ -1,4 +1,6 @@
 const conexao = require('../infraestrutura/conexao')
+const Agendamento = require('./agendamento')
+
 class Paciente {
   salvar (paciente, res) {
     const sql = 'INSERT INTO Paciente SET ?'
@@ -51,6 +53,8 @@ class Paciente {
   }
 
   deletar (id, res) {
+    Agendamento.deletarPorIdPaciente(id)
+
     const sql = 'DELETE FROM Paciente WHERE id=?'
 
     conexao.query(sql, id, (erro, resultados) => {
